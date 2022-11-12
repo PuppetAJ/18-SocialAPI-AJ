@@ -1,5 +1,7 @@
+// Import user model
 const { User } = require('../models');
 
+// Controller object
 const userController = {
   // GET all users
   getAllUsers(req, res) {
@@ -126,4 +128,5 @@ const userController = {
   }
 }
 
+// Export controller
 module.exports = userController;

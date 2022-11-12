@@ -1,9 +1,12 @@
+// Suffix creation function
 const addDateSuffix = date => {
+  // turn date to a string before manipulating
   let dateStr = date.toString();
 
   // get last char of date string
   const lastChar = dateStr.charAt(dateStr.length - 1);
 
+  // Checks number to add suffix (exceptions for certain double digit nums)
   if (lastChar === '1' && dateStr !== '11') {
     dateStr = `${dateStr}st`;
   } else if (lastChar === '2' && dateStr !== '12') {
@@ -14,6 +17,7 @@ const addDateSuffix = date => {
     dateStr = `${dateStr}th`;
   }
 
+  // return new date string
   return dateStr;
 };
 

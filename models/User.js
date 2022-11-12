@@ -1,6 +1,8 @@
+// Imports
 const {Schema, model} = require('mongoose');
 const Thought = require('./Thought');
 
+// Schema declaration
 const UserSchema = new Schema(
 {
   username: {
@@ -26,16 +28,20 @@ const UserSchema = new Schema(
 }
 );
 
+// Virtual
 UserSchema.virtual('friendCount').get(function() {
   return this.friends.length;
 });
 
+// After deletion of a user, delete all of its thoughts
 UserSchema.post('findOneAndDelete', async function(doc) {
   if (doc) {
     const deleteResult = await Thought.deleteMany({ username: doc.username })
   }
 });
 
+// Model instantiation
 const User = model('User', UserSchema);
 
+// Export mdoel
 module.exports = User;

@@ -1,5 +1,7 @@
+// Import models
 const { User, Thought } = require('../models');
 
+// Controller object containing functions
 const thoughtController = {
   // GET all thoughts
   getAllThoughts(req, res) {
@@ -132,4 +134,5 @@ const thoughtController = {
   }
 };
 
+// Export controller
 module.exports = thoughtController;

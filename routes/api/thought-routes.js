@@ -1,4 +1,6 @@
+// Import router
 const router = require('express').Router();
+// Import thought controller functions
 const { 
   getAllThoughts,
   getThoughtById,
@@ -10,6 +12,7 @@ const {
   removeThoughts
 } = require('../../controllers/thought-controller');
 
+// declare routes and prefixes which they use
 router
   .route('/')
   .get(getAllThoughts)
@@ -30,4 +33,5 @@ router
   .route('/:thoughtId/reactions/:reactionId')
   .delete(removeReaction)
 
+// export router
 module.exports = router;

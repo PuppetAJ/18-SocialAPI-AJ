@@ -1,3 +1,4 @@
+// Import router & user controller
 const router = require('express').Router();
 const {
   getAllUsers,
@@ -10,6 +11,7 @@ const {
   removeUsers
 } = require('../../controllers/user-controller');
 
+// Declare routes and functions which they use
 router
   .route('/')
   .get(getAllUsers)
@@ -27,4 +29,5 @@ router
   .post(addFriend)
   .delete(removeFriend)
 
+// Export router
 module.exports = router;
