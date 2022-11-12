@@ -6,10 +6,7 @@ const userController = {
     User.find({})
     .select('-__v')
     .then(dbUserData => res.json(dbUserData))
-    .catch(err => {
-      console.log(err);
-      res.status(400).json(err);
-    });
+    .catch(err => res.status(400).json(err));
   },
 
   // GET user by id
@@ -42,6 +39,11 @@ const userController = {
   },
 
   // CREATE a user
+    // example data
+    // {
+    //   "username": "lernantino",
+    //   "email": "lernantino@gmail.com"
+    // }
   createUser({ body }, res) {
     User.create(body)
       .then(dbUserData => res.json(dbUserData))
