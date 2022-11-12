@@ -122,6 +122,13 @@ const thoughtController = {
       res.json(dbThoughtData)
     })
     .catch(err => res.json(err));
+  },
+
+  // DELETE all thoughts
+  removeThoughts(req, res) {
+    Thought.deleteMany({})
+    .then(dbThoughtData => res.json(dbThoughtData))
+    .catch(err => res.status(400).json(err));
   }
 };
 
