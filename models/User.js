@@ -29,6 +29,10 @@ UserSchema.virtual('friendCount').get(function() {
   return this.friends.length;
 });
 
+UserSchema.pre('remove', function(next) {
+  this.model('thoughts').remove({ username: this.username }, next)
+});
+
 const User = model('User', UserSchema);
 
 module.exports = User;
