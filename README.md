@@ -40,6 +40,7 @@ Once all dependencies have been downloaded, you can excecute server.js by typing
 ## Usage
 
 ![](./assets/images/preview.PNG)
+[Usage video](https://drive.google.com/file/d/1lhyp1uOvnPIcXcVitfp--hzfe_3jBQnj/view?usp=sharing)
 
 In order to use this project, please make sure you have mongoDB and optionally Insomnia intalled on your machine. Once that is set up, simply execute npm start and the application should start. Insomnia can be used to test the routes.
 
